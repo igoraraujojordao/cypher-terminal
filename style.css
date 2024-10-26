@@ -1,3 +1,4 @@
+/* General Page Styles */
 body {
     margin: 0;
     padding: 0;
@@ -8,32 +9,106 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
-.hero {
-    text-align: center;
+.page.active {
+    opacity: 1;
+    z-index: 1;
 }
 
-h1 {
-    font-size: 2.5em;
-    color: #00FF00; /* Green color for phrase */
+.hidden {
+    display: none;
 }
 
-h2 {
-    font-size: 2em;
+.welcome-text {
+    font-size: 3em;
+    color: #00FF00;
+}
+
+button {
     margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #00FF00;
+    color: black;
+    border: none;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
 }
 
-img {
-    margin-top: 10px;
-    width: 150px; /* Adjust logo size */
+button:hover {
+    background-color: #009900;
 }
 
+/* Initialization Page */
+.init-sequence {
+    color: #00FF00;
+}
+
+.progress-bar {
+    margin-top: 20px;
+    width: 80%;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 10px;
+    background: #00FF00;
+    width: 0;
+    transition: width 5s;
+}
+
+/* Coding Page */
 #coding-sequence {
-    margin-top: 40px;
     color: #00FF00;
     font-size: 1.2em;
     text-align: left;
-    white-space: pre;
+}
+
+.announcement {
+    margin-top: 20px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.announcement p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.announcement a {
+    color: #00FF00;
+    text-decoration: none;
+}
+
+.announcement a:hover {
+    color: #009900;
+}
+
+/* Keyframes */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }

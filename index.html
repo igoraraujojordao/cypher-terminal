@@ -5,16 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cypher Terminal</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!-- For typing animation -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
-    <div class="hero">
-        <h1 id="welcome-text"></h1> <!-- The phrase animation -->
-        <div class="logo">
-            <h2>Cypher Terminal</h2> <!-- Crypto Name -->
-            <img src="logo.jpeg" alt="Cypher Terminal Logo"> <!-- Replace with your logo -->
+    <!-- Page 1: Welcome Page -->
+    <div id="page1" class="page">
+        <h1 class="welcome-text"></h1>
+        <button id="enter-btn">CipherTerminal is already here. Are you ready?</button>
+    </div>
+
+    <!-- Page 2: Initialization Page -->
+    <div id="page2" class="page hidden">
+        <div class="init-sequence">
+            <p id="init-text"></p>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
         </div>
-        <div id="coding-sequence"></div> <!-- Simulated coding section -->
+    </div>
+
+    <!-- Page 3: Coding & Announcement Page -->
+    <div id="page3" class="page hidden">
+        <div id="coding-container">
+            <pre id="coding-sequence"></pre>
+        </div>
+        <div class="announcement">
+            <p>🚀 Tomorrow: CipherTerminal goes live on YouTube. Witness AI code itself to life.</p>
+            <a href="https://twitter.com/your_twitter_handle" target="_blank">Follow CipherTerminal on Twitter</a>
+        </div>
     </div>
 
     <script src="script.js"></script>
