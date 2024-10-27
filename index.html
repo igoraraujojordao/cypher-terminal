@@ -2,39 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cypher Terminal</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <title>CipherTerminal - Unlocking the Future of Crypto AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include AOS Library for Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
-    <!-- Page 1: Welcome Page -->
-    <div id="page1" class="page">
-        <h1 class="welcome-text"></h1>
-        <button id="enter-btn">CipherTerminal is already here. Are you ready?</button>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-text">Initializing CipherTerminal<span class="dots"></span></div>
     </div>
 
-    <!-- Page 2: Initialization Page -->
-    <div id="page2" class="page hidden">
-        <div class="init-sequence">
-            <p id="init-text"></p>
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-        </div>
+    <!-- Main Content -->
+    <div id="main-content" class="hidden">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 data-aos="fade-up">CipherTerminal</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Unlocking the Future of Crypto AI</p>
+            <a href="#about" class="btn" data-aos="fade-up" data-aos-delay="400">Enter Terminal</a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2 data-aos="fade-right">About CipherTerminal</h2>
+            <p data-aos="fade-right" data-aos-delay="200">
+                CipherTerminal is an advanced AI-driven cryptocurrency platform that evolves autonomously, pushing the boundaries of blockchain technology.
+            </p>
+        </section>
+
+        <!-- Announcement Section -->
+        <section class="announcement" data-aos="fade-up">
+            <p>🚀 <strong>Tomorrow:</strong> CipherTerminal goes live on YouTube. Witness AI code itself to life.</p>
+            <a href="https://twitter.com/your_twitter_handle" target="_blank" class="btn">Follow Us on Twitter</a>
+        </section>
     </div>
 
-    <!-- Page 3: Coding & Announcement Page -->
-    <div id="page3" class="page hidden">
-        <div id="coding-container">
-            <pre id="coding-sequence"></pre>
-        </div>
-        <div class="announcement">
-            <p>🚀 Tomorrow: CipherTerminal goes live on YouTube. Witness AI code itself to life.</p>
-            <a href="https://twitter.com/your_twitter_handle" target="_blank">Follow CipherTerminal on Twitter</a>
-        </div>
-    </div>
-
+    <!-- Include JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
