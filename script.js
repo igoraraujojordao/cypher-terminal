@@ -1,82 +1,143 @@
-// Matrix Background Effect
-const canvas = document.getElementById('matrix');
-const ctx = canvas.getContext('2d');
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZ0123456789';
-const fontSize = 16;
-const columns = canvas.width / fontSize;
-
-const drops = [];
-for (let x = 0; x < columns; x++) {
-    drops[x] = canvas.height;
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
 }
 
-function draw() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+.hidden {
+    display: none;
+}
 
-    ctx.fillStyle = '#00ff00';
-    ctx.font = fontSize + 'px Courier New';
+/* Initial Interface */
+#initial-interface {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    text-align: center;
+}
 
-    for (let i = 0; i < drops.length; i++) {
-        const text = letters.charAt(Math.floor(Math.random() * letters.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+.typing {
+    font-size: 3em;
+    color: #00ff00;
+}
 
-        if (drops[i] * fontSize < canvas.height && Math.random() > 0.975) {
-            drops[i]++;
-        } else if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-        } else {
-            drops[i]++;
-        }
+#enter-btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#enter-btn:hover {
+    background-color: #00ff00;
+    color: black;
+}
+
+/* Code Background */
+#code-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Main Content */
+#main-content {
+    position: relative;
+    z-index: 1;
+    color: #00ff00;
+}
+
+/* About Section */
+.about {
+    padding: 100px 20px;
+    background-color: transparent;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    color: #00ff00;
+}
+
+.about p {
+    font-size: 1.2em;
+    margin-top: 20px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* Code Simulation Section */
+.code-simulation {
+    padding: 50px 20px;
+    background-color: transparent;
+    color: #00ff00;
+    text-align: center;
+}
+
+.code-container {
+    max-height: 300px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+#code-display {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Announcement Section */
+.announcement {
+    padding: 50px 20px;
+    background-color: transparent;
+    text-align: center;
+    color: #ffffff;
+}
+
+.announcement p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #00ff00;
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about h2 {
+        font-size: 2em;
     }
 }
-
-setInterval(draw, 33);
-
-// Typing Effect in Hero Section
-document.addEventListener('DOMContentLoaded', function () {
-    const options = {
-        strings: ['CipherTerminal'],
-        typeSpeed: 100,
-        showCursor: false,
-    };
-
-    const typed = new Typed('.typing', options);
-
-    // Start Code Simulation after a delay
-    setTimeout(startCodeSimulation, 5000);
-});
-
-// Code Simulation
-function startCodeSimulation() {
-    const codeDisplay = document.getElementById('code-display');
-    const codeLines = [
-        'Initializing AI protocols...',
-        'Loading neural network modules...',
-        'Establishing blockchain connections...',
-        'Decrypting cryptographic algorithms...',
-        'Self-optimization sequence initiated...',
-        'CipherTerminal operational.'
-    ];
-
-    let index = 0;
-    function displayNextLine() {
-        if (index < codeLines.length) {
-            codeDisplay.innerHTML += codeLines[index] + '\n';
-            codeDisplay.scrollTop = codeDisplay.scrollHeight;
-            index++;
-            setTimeout(displayNextLine, 1500);
-        }
-    }
-    displayNextLine();
-}
-
-// Adjust Canvas Size on Window Resize
-window.addEventListener('resize', function () {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
