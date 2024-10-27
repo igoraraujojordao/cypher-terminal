@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Loader Styles */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0e0e0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loader-text {
+    font-size: 1.5em;
+    color: #00ffcc;
+}
+
+.dots::after {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    text-align: left;
+    animation: ellipsis steps(4, end) 2s infinite;
+}
+
+@keyframes ellipsis {
+    to {
+        width: 4em;
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(14,14,14,0.8), rgba(14,14,14,0.8)), url('hero-bg.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin: 0;
+    color: #00ffcc;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 2px solid #00ffcc;
+    color: #00ffcc;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #00ffcc;
+    color: #0e0e0e;
+}
+
+/* About Section */
+.about {
+    padding: 100px 20px;
+    background-color: #161616;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    color: #00ffcc;
+}
+
+.about p {
+    font-size: 1.2em;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* Announcement Section */
+.announcement {
+    padding: 50px 20px;
+    background-color: #0e0e0e;
+    text-align: center;
+}
+
+.announcement p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.announcement .btn {
+    border-color: #ff0066;
+    color: #ff0066;
+}
+
+.announcement .btn:hover {
+    background-color: #ff0066;
+    color: #0e0e0e;
+}
+
+/* AOS Animations */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translate(0);
+}
