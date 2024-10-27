@@ -4,6 +4,7 @@ AOS.init({
     once: true,
 });
 
+
 // Loader Animation
 document.addEventListener("DOMContentLoaded", function () {
     const loader = document.getElementById('loader');
