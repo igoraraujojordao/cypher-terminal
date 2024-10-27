@@ -8,8 +8,44 @@ body {
     overflow: hidden;
 }
 
-/* Matrix Background */
-#matrix {
+.hidden {
+    display: none;
+}
+
+/* Initial Interface */
+#initial-interface {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    text-align: center;
+}
+
+.typing {
+    font-size: 3em;
+    color: #00ff00;
+}
+
+#enter-btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#enter-btn:hover {
+    background-color: #00ff00;
+    color: black;
+}
+
+/* Code Background */
+#code-background {
     position: fixed;
     top: 0;
     left: 0;
@@ -24,50 +60,13 @@ body {
 #main-content {
     position: relative;
     z-index: 1;
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 3em;
     color: #00ff00;
-}
-
-.hero p {
-    font-size: 1.5em;
-    margin-top: 20px;
-    color: #ffffff;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 15px 30px;
-    background-color: transparent;
-    border: 2px solid #00ff00;
-    color: #00ff00;
-    text-decoration: none;
-    font-size: 1em;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn:hover {
-    background-color: #00ff00;
-    color: black;
 }
 
 /* About Section */
 .about {
     padding: 100px 20px;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: transparent;
     text-align: center;
 }
 
@@ -86,16 +85,19 @@ body {
 /* Code Simulation Section */
 .code-simulation {
     padding: 50px 20px;
-    background-color: black;
+    background-color: transparent;
     color: #00ff00;
+    text-align: center;
 }
 
 .code-container {
     max-height: 300px;
     overflow: hidden;
-    background-color: #111;
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 5px;
+    margin: 0 auto;
+    width: 80%;
 }
 
 #code-display {
@@ -106,7 +108,7 @@ body {
 /* Announcement Section */
 .announcement {
     padding: 50px 20px;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: transparent;
     text-align: center;
     color: #ffffff;
 }
@@ -116,22 +118,25 @@ body {
     margin-bottom: 20px;
 }
 
-.announcement .btn {
-    border-color: #00ff00;
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 2px solid #00ff00;
     color: #00ff00;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.announcement .btn:hover {
+.btn:hover {
     background-color: #00ff00;
     color: black;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2em;
-    }
-
     .about h2 {
         font-size: 2em;
     }
