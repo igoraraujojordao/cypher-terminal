@@ -1,143 +1,196 @@
+/* styles.css */
+
 /* General Styles */
 body {
     margin: 0;
-    padding: 0;
-    background-color: black;
-    color: #00ff00;
-    font-family: 'Courier New', Courier, monospace;
-    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFFFFF;
+    background-color: #1A1A1A;
 }
 
-.hidden {
-    display: none;
+a {
+    color: #FFD700;
+    text-decoration: none;
 }
 
-/* Initial Interface */
-#initial-interface {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: black;
-    text-align: center;
+a:hover {
+    text-decoration: underline;
 }
 
-.typing {
-    font-size: 3em;
-    color: #00ff00;
-}
-
-#enter-btn {
-    margin-top: 20px;
-    padding: 15px 30px;
-    background-color: transparent;
-    border: 2px solid #00ff00;
-    color: #00ff00;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-#enter-btn:hover {
-    background-color: #00ff00;
-    color: black;
-}
-
-/* Code Background */
-#code-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    overflow: hidden;
-    z-index: -1;
-}
-
-/* Main Content */
-#main-content {
-    position: relative;
-    z-index: 1;
-    color: #00ff00;
-}
-
-/* About Section */
-.about {
+/* Hero Section */
+.hero {
+    background-image: url('images/hero-background.jpg');
+    background-size: cover;
     padding: 100px 20px;
-    background-color: transparent;
     text-align: center;
 }
 
-.about h2 {
-    font-size: 2.5em;
-    color: #00ff00;
-}
-
-.about p {
-    font-size: 1.2em;
-    margin-top: 20px;
-    line-height: 1.6;
-    color: #ffffff;
-}
-
-/* Code Simulation Section */
-.code-simulation {
-    padding: 50px 20px;
-    background-color: transparent;
-    color: #00ff00;
-    text-align: center;
-}
-
-.code-container {
-    max-height: 300px;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border-radius: 5px;
-    margin: 0 auto;
-    width: 80%;
-}
-
-#code-display {
-    font-size: 1em;
-    line-height: 1.5;
-}
-
-/* Announcement Section */
-.announcement {
-    padding: 50px 20px;
-    background-color: transparent;
-    text-align: center;
-    color: #ffffff;
-}
-
-.announcement p {
-    font-size: 1.5em;
+.hero h1 {
+    font-size: 48px;
     margin-bottom: 20px;
 }
 
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
 .btn {
-    display: inline-block;
+    background-color: #FFD700;
+    color: #1A1A1A;
     padding: 15px 30px;
-    background-color: transparent;
-    border: 2px solid #00ff00;
-    color: #00ff00;
-    text-decoration: none;
-    font-size: 1em;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    font-size: 18px;
 }
 
 .btn:hover {
-    background-color: #00ff00;
-    color: black;
+    background-color: #E6C200;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .about h2 {
-        font-size: 2em;
-    }
+/* Navigation */
+.navbar {
+    background-color: #0D0D0D;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar a {
+    font-size: 18px;
+}
+
+/* Introduction Section */
+.introduction {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.introduction h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.introduction p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Featured Symbols */
+.featured-symbols {
+    padding: 50px 20px;
+    background-color: #262626;
+    text-align: center;
+}
+
+.featured-symbols h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.symbol-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.symbol-card {
+    background-color: #333333;
+    width: 200px;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.symbol-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.symbol-card h3 {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.symbol-card p {
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    background-color: #0D0D0D;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* Chat Section */
+.chat-section {
+    padding: 50px 20px;
+    background-color: #1A1A1A;
+    text-align: center;
+}
+
+.chat-container {
+    background-color: #262626;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    height: 400px;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+
+.chat-message {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.chat-message.user {
+    color: #FFD700;
+}
+
+.chat-message.bot {
+    color: #FFFFFF;
+}
+
+.chat-input {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.chat-input input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FFD700;
+    color: #1A1A1A;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #E6C200;
 }
